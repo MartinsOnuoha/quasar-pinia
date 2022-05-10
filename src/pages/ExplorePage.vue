@@ -9,7 +9,7 @@
         :key="index"
       >
         <q-card bordered flat>
-          <q-img height="200px" :src="item.bannerUrl">
+          <q-img height="200px" :src="item.bannerUrl || defaultImage">
             <div class="absolute-bottom text-subtitle2 text-center">
               {{ item.name }} - {{ item.phoneNum }}
               <div class="q-mt-md">
@@ -39,6 +39,9 @@ const ExplorePage = defineComponent({
   },
   computed: {
     ...mapState(useMainStore, ['restaurants']),
+    defaultImage() {
+      return 'https://arlingtonva.s3.amazonaws.com/wp-content/uploads/sites/25/2013/12/restaurant.jpeg';
+    },
   },
   async mounted() {
     await this.getRestaurant();

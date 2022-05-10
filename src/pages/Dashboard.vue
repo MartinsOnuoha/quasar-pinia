@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center column">
-    <div class="text-h3 q-mb-md">
+    <div :class="['text-h3 q-mb-md', $q.platform.is.mobile? 'q-pa-md text-center' : false]">
       <span v-if="isClient && clientDetails">
         Hi, {{ clientDetails.lastName }}👋</span
       >

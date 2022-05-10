@@ -78,7 +78,7 @@ const sidebarlinks = [
   {
     title: 'Manage Orders',
     icon: 'assignment',
-    to: 'My orders',
+    to: 'orders',
     forRestaurantOnly: true,
   },
   {

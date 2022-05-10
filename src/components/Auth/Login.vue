@@ -1,6 +1,6 @@
 <!-- New client login form page, template is from quasar-->
 <template>
-  <div :class="$q.platform.is.mobile ? 'full-width' : 'login'">
+  <div :class="[$q.platform.is.mobile ? 'full-width' : 'login', 'q-pa-md']">
     <h4>Login</h4>
     <q-card flat bordered>
       <q-card-section>

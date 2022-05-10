@@ -53,6 +53,8 @@ export const useMainStore = defineStore('mainStore', {
 
         if (response.status === 201) {
           this.setCookie('token', response.data.token);
+          this.setCookie('clientId', response.data.clientId);
+          this.setCookie('restaurantId', response.data.restaurantId);
           return true;
         }
         return false;

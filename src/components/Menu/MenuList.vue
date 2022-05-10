@@ -1,11 +1,11 @@
 <template>
-  <div class="column">
+  <div class="full-width">
     <q-card bordered flat class="menuList q-mt-md full-width">
       <q-card-section>
         <h6>Menu List</h6>
-        <div v-if="menus.length" class="row q-gutter-md">
+        <div v-if="menus.length" :class="['row', $q.platform.is.desktop? 'q-gutter-md' : false]">
           <div
-            class="col-md-3 col-lg-3 col-xl-3 col-xs-12 col-sm-12"
+            class="col-md-3 col-lg-3 col-xl-3 col-xs-12 col-sm-12 q-mt-sm"
             v-for="(item, index) in menus"
             :key="index"
           >

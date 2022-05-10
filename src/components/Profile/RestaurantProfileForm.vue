@@ -1,5 +1,5 @@
 <template>
-  <q-card class="restaurantProfileForm">
+  <q-card :class="[$q.platform.is.mobile? 'full-width' : 'restaurantProfileForm']">
     <q-card-section>
       <q-form @submit="handleSubmit" class="q-gutter-md">
         <q-input
@@ -46,7 +46,7 @@
         />
         <q-input
           dense
-          v-model="form.Phonenumber"
+          v-model="form.phoneNum"
           type="text"
           label="Phone number"
           outlined
@@ -113,9 +113,11 @@ const RestaurantProfileForm = defineComponent({
     setDefaultValues() {
       this.form.name = this.restaurantDetails.name;
       this.form.address = this.restaurantDetails.address;
-      this.form.cityName = this.restaurantDetails.cityName;
+      this.form.cityName = this.restaurantDetails.city;
       this.form.email = this.restaurantDetails.email;
       this.form.phoneNum = this.restaurantDetails.phoneNum;
+      this.form.bannerUrl = this.restaurantDetails.bannerUrl;
+      this.form.bio = this.restaurantDetails.bio;
     },
     async handleSubmit() {
       const payload = this.form;
@@ -132,7 +134,7 @@ export default RestaurantProfileForm;
 </script>
 
 <style lang="scss">
-.clientProfileForm {
+.restaurantProfileForm {
   width: 500px;
 }
 </style>

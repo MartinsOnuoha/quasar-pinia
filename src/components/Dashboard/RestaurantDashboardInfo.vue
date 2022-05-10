@@ -1,7 +1,7 @@
 <template>
-  <q-card class="my-card">
+  <q-card>
     <q-card-section class="text-body1">
-      <q-icon size="30px" name="inventory_display" />
+      <q-icon size="30px" name="menu" />
       You have {{ totalMenus }} Menus
     </q-card-section>
   </q-card>

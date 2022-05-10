@@ -20,7 +20,7 @@
         </q-item-section>
         <q-item-section side top>
           <q-badge color="teal" :label="getStatus(item)" />
-          <div class="flex">
+          <div :class="['flex', $q.platform.is.mobile? 'column' : false]">
             <q-btn
               color="negative"
               :disable="item.isCancelled || item.isComplete"
